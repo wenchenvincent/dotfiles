@@ -1,0 +1,9 @@
+syntax on
+set number
+
+" Turn off expanding tabs for makefiles
+autocmd FileType make setlocal noexpandtab
+" Most file types use two spaces for tab
+autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
+" For Python use four spaces for tab
+autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab

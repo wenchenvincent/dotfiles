@@ -1,3 +1,22 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: [ "~" ]
+
+- link: 
+    ~/.bash_aliases:
+      path: bash/bash_aliases
+
+    ~/.gitconfig:
+      path: git/gitconfig
+
+    ~/.vimrc:
+      path: vim/vimrc
+
+- create:
+  - ~/dockerx
+
+- shell: [ git submodule update --init --recursive ]
+
