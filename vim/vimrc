@@ -7,3 +7,22 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 " For Python use four spaces for tab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
+
+call plug#begin()
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
+call plug#end()
+
+" enable gtags module
+" let g:gutentags_modules = ['ctags', 'gtags_cscope']
+" Disable now as it currently does not work
+let g:gutentags_modules = ['ctags']
+
+" generate datebases in my cache directory, prevent gtags files polluting my
+" project
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+
+" change focus to quickfix window after search (optional).
+let g:gutentags_plus_switch = 1
+
+set statusline+=%{gutentags#statusline()}

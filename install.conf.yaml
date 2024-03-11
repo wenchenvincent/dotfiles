@@ -14,6 +14,8 @@
 
     ~/.vimrc:
       path: vim/vimrc
+    ~/.vim:
+      path: vim/vim
 
 - create:
   - ~/dockerx
