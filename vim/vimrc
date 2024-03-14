@@ -14,9 +14,7 @@ Plug 'skywind3000/gutentags_plus'
 call plug#end()
 
 " enable gtags module
-" let g:gutentags_modules = ['ctags', 'gtags_cscope']
-" Disable now as it currently does not work
-let g:gutentags_modules = ['ctags']
+let g:gutentags_modules = ['ctags', 'gtags_cscope']
 
 " generate datebases in my cache directory, prevent gtags files polluting my
 " project
