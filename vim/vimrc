@@ -23,4 +23,4 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 " change focus to quickfix window after search (optional).
 let g:gutentags_plus_switch = 1
 
-set statusline+=%{gutentags#statusline()}
+" set statusline+=%{gutentags#statusline()}
