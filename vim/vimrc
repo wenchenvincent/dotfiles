@@ -11,6 +11,7 @@ autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 call plug#begin()
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " enable gtags module
