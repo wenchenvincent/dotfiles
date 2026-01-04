@@ -17,6 +17,9 @@
     ~/.vim:
       path: vim/vim
 
+    ~/.tmux.conf:
+      path: tmux/tmux.conf
+
 - create:
   - ~/dockerx
 
