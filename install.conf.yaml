@@ -20,6 +20,9 @@
     ~/.tmux.conf:
       path: tmux/tmux.conf
 
+    ~/.claude/settings.json:
+      path: claude/settings.json
+
 - create:
   - ~/dockerx
 
