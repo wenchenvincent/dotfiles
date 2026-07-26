@@ -21,15 +21,23 @@
     ]
   },
   "extraKnownMarketplaces": {
-    "superpowers-marketplace": {
+    "ponytail": {
       "source": {
         "source": "github",
-        "repo": "obra/superpowers-marketplace"
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
       }
     }
   },
   "enabledPlugins": {
-    "superpowers@superpowers-marketplace": true
+    "superpowers@claude-plugins-official": true,
+    "ponytail@ponytail": true,
+    "claude-mem@thedotmack": true
   },
   "theme": "dark"
 }
