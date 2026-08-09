@@ -1,3 +1,5 @@
 [user]  
         name = Wen Chen
         email = Wen.Chen@amd.com
+[http]
+	sslCAInfo = /home/wenchen2/.github-cert.pem
