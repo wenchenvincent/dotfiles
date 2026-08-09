@@ -55,5 +55,6 @@
   "env": {
     "NODE_EXTRA_CA_CERTS": "/etc/ssl/certs/ca-certificates.crt"
   },
+  "remoteControlAtStartup": true,
   "theme": "dark"
 }
