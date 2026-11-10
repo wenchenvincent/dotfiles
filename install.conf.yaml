@@ -22,9 +22,20 @@
 
     ~/.claude/settings.json:
       path: claude/settings.json
+    ~/.claude/CLAUDE.md:
+      path: claude/CLAUDE.md
+    ~/.claude/commands:
+      path: claude/commands
 
 - create:
   - ~/dockerx
 
-- shell: [ git submodule update --init --recursive ]
+- shell:
+  - [ git submodule update --init --recursive, Updating submodules ]
+  # Knowledge repo (private). Each step is best-effort: a machine without the
+  # deploy key registered yet completes on the next ./install.
+  - [ bash claude/bootstrap-knowledge-key.sh || true, Generating knowledge deploy key ]
+  - [ test -d ~/claude_stuff || git clone git@github.com:wenchenvincent/claude_stuff.git ~/claude_stuff || true, Cloning knowledge repo ]
+  - [ ~/claude_stuff/scripts/ensure-claude-mem.sh || true, Bootstrapping claude-mem ]
+  - [ ~/claude_stuff/scripts/ensure-sync-cron.sh || true, Installing sync cron ]
 

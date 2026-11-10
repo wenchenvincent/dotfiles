@@ -1,0 +1,5 @@
+# Claude Code writes these into ~/.claude, which symlinks into this repo.
+# Never commit them: settings.local.json is machine-local, history is session content.
+settings.local.json
+claude/settings.local.json
+history*
