@@ -27,6 +27,19 @@
           }
         ]
       }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "ExitPlanMode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/claude_stuff/scripts/stamp-plan.sh || true",
+            "timeout": 15,
+            "statusMessage": "Filing plan into the knowledge repo..."
+          }
+        ]
+      }
     ]
   },
   "enabledPlugins": {
