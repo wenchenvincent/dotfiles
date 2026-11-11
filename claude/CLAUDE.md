@@ -18,9 +18,11 @@ Persistent cross-project knowledge lives in `~/claude_stuff` (private). Conventi
 - File substantive analyses — comparisons, architecture deep dives, anything that took real work to derive —
   into `~/claude_stuff/analyses/` with an entry in that repo's `index.md`, before the session ends. Do not
   leave them only in chat history.
-- Wrap patent-sensitive or pre-disclosure content in `<private>...</private>`. Treat this as a hint, not a
-  guarantee: claude-mem 13.24.5 does not implement any stripping for it, so do not put anything in a session
-  that would be harmful merely to have on local disk.
+- Wrap patent-sensitive or pre-disclosure content in `<private>...</private>`. This genuinely works: the
+  tagged text is stripped before the memory layer stores it. Two blind spots, both tested: text inside a
+  **tool call** (a shell command, a path, a grep pattern) is logged verbatim, and the editor's own session
+  transcript keeps the full text on local disk regardless. So keep secrets out of commands and filenames,
+  not just out of prose.
 - When opening a PR from a session that used plan mode, include a `Plan: plans/inbox/<file>` line in the PR
   body so the plan and the PR stay linked.
 
