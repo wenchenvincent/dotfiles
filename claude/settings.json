@@ -45,7 +45,8 @@
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "ponytail@ponytail": true,
-    "claude-mem@thedotmack": true
+    "claude-mem@thedotmack": true,
+    "flydsl@flydsl": true
   },
   "extraKnownMarketplaces": {
     "ponytail": {
@@ -58,6 +59,12 @@
       "source": {
         "source": "github",
         "repo": "thedotmack/claude-mem"
+      }
+    },
+    "flydsl": {
+      "source": {
+        "source": "github",
+        "repo": "ROCm/FlyDSL"
       }
     }
   },
