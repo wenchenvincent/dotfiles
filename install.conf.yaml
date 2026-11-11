@@ -38,4 +38,5 @@
   - [ test -d ~/claude_stuff || git clone git@github.com:wenchenvincent/claude_stuff.git ~/claude_stuff || true, Cloning knowledge repo ]
   - [ ~/claude_stuff/scripts/ensure-claude-mem.sh || true, Bootstrapping claude-mem ]
   - [ ~/claude_stuff/scripts/ensure-sync-cron.sh || true, Installing sync cron ]
+  - [ ~/claude_stuff/scripts/link-skills.sh || true, Linking distilled skills ]
 
