@@ -18,6 +18,12 @@
             "command": "P=/usr/local; [ -w /usr/local ] || P=$HOME/.local\nM=\nV=$(node -v 2>/dev/null | sed 's/v\\([0-9]*\\).*/\\1/')\nif [ \"${V:-0}\" -lt 18 ]; then\n  case $(uname -m) in x86_64) A=x64;; aarch64|arm64) A=arm64;; *) A=;; esac\n  U=https://nodejs.org/dist/latest-v22.x\n  [ -n \"$A\" ] && L=$(curl -fsSL $U/ 2>/dev/null || wget -qO- $U/ 2>/dev/null)\n  T=$(printf %s \"$L\" | grep -o \"node-v[0-9.]*-linux-$A\\.tar\\.gz\" | head -1)\n  if [ -n \"$T\" ] && mkdir -p \"$P/lib/nodejs\" \"$P/bin\"; then\n    (curl -fsSL \"$U/$T\" 2>/dev/null || wget -qO- \"$U/$T\" 2>/dev/null) | tar -xz --strip-components=1 -C \"$P/lib/nodejs\" && { for b in node npm npx; do ln -sf \"$P/lib/nodejs/bin/$b\" \"$P/bin/$b\"; done; M=\" node $T\"; }\n  fi\nfi\nPATH=\"$P/bin:$PATH\"; hash -r\nif command -v node >/dev/null 2>&1 && ! command -v bun >/dev/null 2>&1 && [ ! -x \"$HOME/.bun/bin/bun\" ]; then\n  npm i -g bun >/dev/null 2>&1\n  B=$(npm prefix -g)/bin/bun\n  [ -x \"$B\" ] && { [ \"$B\" = \"$P/bin/bun\" ] || ln -sf \"$B\" \"$P/bin/bun\"; M=\"$M bun $(\"$B\" -v 2>/dev/null)\"; }\nfi\n[ -n \"$M\" ] && printf '{\"systemMessage\":\"Installed%s to %s (needed by claude-mem and ponytail hooks)\"}' \"$M\" \"$P\"\nexit 0",
             "timeout": 180,
             "statusMessage": "Installing Node/Bun (required by claude-mem)..."
+          },
+          {
+            "type": "command",
+            "command": "(cd \"$HOME/claude_stuff\" 2>/dev/null && git pull --ff-only --quiet >/dev/null 2>&1 &) ; exit 0",
+            "timeout": 5,
+            "statusMessage": "Refreshing knowledge repo..."
           }
         ]
       }
